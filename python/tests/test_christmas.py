@@ -1,27 +1,30 @@
 from christmas import verse_header, verse_name, verse_counting_line
 from christmas import whole_verse, verse_body, whole_song
 
+
 def test_verse_header():
     header = verse_header(1)
     assert header == """\
 On the first day of Christmas
 My true love gave to me:"""
-    
+
 
 def test_number_to_verse_name():
     assert "first" == verse_name(1)
     assert "second" == verse_name(2)
-    
+
+
 def test_verse_header_two():
     header = verse_header(2)
     assert header == """\
 On the second day of Christmas
 My true love gave to me:"""
-    
-    
+
+
 def test_counting_line():
     assert verse_counting_line(1) == "A partridge in a pear tree."
     assert verse_counting_line(2) == "Two turtle doves and"
+
 
 def test_verse_1():
     verse = whole_verse(1)
@@ -31,11 +34,13 @@ My true love gave to me:
 A partridge in a pear tree.
 """
 
+
 def test_body():
     body = verse_body(2)
     assert body == """\
 Two turtle doves and
 A partridge in a pear tree."""
+
 
 def test_verse_2():
     verse = whole_verse(2)
@@ -45,6 +50,7 @@ My true love gave to me:
 Two turtle doves and
 A partridge in a pear tree.
 """
+
 
 def test_verse_12():
     verse = whole_verse(12)
@@ -64,7 +70,8 @@ Three french hens
 Two turtle doves and
 A partridge in a pear tree.
 """
-    
+
+
 def test_whole_song():
     song = whole_song()
     assert song == """\
@@ -182,4 +189,3 @@ Three french hens
 Two turtle doves and
 A partridge in a pear tree.
 """
-   

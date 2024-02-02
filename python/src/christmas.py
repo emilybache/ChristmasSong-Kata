@@ -1,9 +1,9 @@
-
 def verse_name(number):
     names = ["first", "second", "third", "fourth",
              "fifth", "sixth", "seventh", "eighth",
              "ninth", "tenth", "eleventh", "twelfth"]
     return names[number - 1]
+
 
 def verse_header(number):
     return f"""\
@@ -28,14 +28,17 @@ def verse_counting_line(number):
     }
     return lines[number]
 
+
 def verse_body(number):
     lines = (verse_counting_line(i) for i in range(number, 0, -1))
     return "\n".join(lines)
+
 
 def whole_verse(number):
     header = verse_header(number)
     body = verse_body(number)
     return f"{header}\n{body}\n"
+
 
 def whole_song():
     verses = (whole_verse(i) for i in range(1, 13))
